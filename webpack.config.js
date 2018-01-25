@@ -1,16 +1,20 @@
-var path = require("path");
+var path = require('path')
 
 module.exports = {
-  entry: "./index.ts",
+  entry: './src/index.ts',
   output: {
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
   resolve: {
-    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
   module: {
+    // loaders: [{ test: /\.tsx?$/, loader: 'ts-loader' }]
     loaders: [
-      { test: /\.tsx?$/, loader: "ts-loader" }
+      {
+        loader:
+          'awesome-typescript-loader?configFileName=config/tsconfig.json&declaration=false'
+      }
     ]
   }
 }
